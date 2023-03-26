@@ -1,0 +1,10 @@
+node{
+    stage{'Checkout'}{
+      git 'https://github.com/altafsmailbox/Jenkins'
+    }
+    stage{'Compile'}{
+      def mvnHome = tool name: 'maven', type: 'maven'
+      sh "${mvnHome}/bin/mvn package"
+    }
+   
+  }
